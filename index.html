@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FBT — Fédération Béninoise de Tennis</title>
+    <meta name="description" content="Site officiel de la Fédération Béninoise de Tennis (FBT). Découvrez nos compétitions, nos champions, l'Académie Francophone de Tennis et rejoignez le mouvement du tennis béninois.">
+    <meta name="theme-color" content="#1A7A3D">
+    <meta property="og:title" content="Fédération Béninoise de Tennis">
+    <meta property="og:description" content="Développer, promouvoir et porter le tennis béninois sur la scène africaine et internationale.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_BJ">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='none' stroke='%231A7A3D' stroke-width='2'/><path d='M5 16Q16 4 27 16Q16 28 5 16Z' fill='none' stroke='%231A7A3D' stroke-width='1.5'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Tennis Ball Scroll Animation -->
+    <div class="tennis-ball-container" id="tennisBall" aria-hidden="true">
+        <svg viewBox="0 0 60 60" class="tb-svg">
+            <circle cx="30" cy="30" r="28" fill="#e8d44d"/>
+            <circle cx="30" cy="30" r="28" fill="url(#tbGrad)"/>
+            <path d="M8 18 Q20 30 8 44" fill="none" stroke="#fff" stroke-width="2.2" opacity=".7"/>
+            <path d="M52 18 Q40 30 52 44" fill="none" stroke="#fff" stroke-width="2.2" opacity=".7"/>
+            <circle cx="30" cy="30" r="28" fill="url(#tbShine)"/>
+            <defs>
+                <radialGradient id="tbGrad" cx="35%" cy="35%">
+                    <stop offset="0%" stop-color="#f2e55a" stop-opacity=".3"/>
+                    <stop offset="100%" stop-color="#c4a820" stop-opacity=".4"/>
+                </radialGradient>
+                <radialGradient id="tbShine" cx="30%" cy="25%">
+                    <stop offset="0%" stop-color="#fff" stop-opacity=".25"/>
+                    <stop offset="50%" stop-color="#fff" stop-opacity="0"/>
+                </radialGradient>
+            </defs>
+        </svg>
+        <div class="tb-shadow"></div>
+    </div>
+
+    <!-- Grain overlay -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- Mobile menu overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#accueil" class="nav-logo">
+                <img src="assets/logo-fbt.jpeg" alt="Logo FBT" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                <li><a href="#apropos" class="nav-link">À propos</a></li>
+                <li><a href="#joueurs" class="nav-link">Champions</a></li>
+                <li><a href="#bureau" class="nav-link">Bureau</a></li>
+                <li><a href="#academie" class="nav-link">Académie</a></li>
+                <li><a href="#competitions" class="nav-link">Compétitions</a></li>
+                <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="accueil">
+        <div class="hero-bg">
+            <img src="assets/davis-cup-action-2.jpg" alt="Joueur béninois en plein match lors de la Coupe Davis, bannière Davis Cup en arrière-plan">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="hb-dot"></span> Fédération Béninoise de Tennis
+            </div>
+            <h1 class="hero-title">
+                <span class="ht-line"><span class="hw">Le Tennis</span></span>
+                <span class="ht-line"><span class="hw accent">Béninois</span> <span class="hw">Rayonne</span></span>
+            </h1>
+            <p class="hero-desc">Développer, promouvoir et porter le tennis béninois sur la scène africaine et internationale.</p>
+            <div class="hero-actions">
+                <a href="#apropos" class="btn btn-primary">
+                    <span>Découvrir la FBT</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#competitions" class="btn btn-outline">Nos compétitions</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="hs-item">
+                <strong data-target="12">0</strong>
+                <span>Départements</span>
+            </div>
+            <div class="hs-divider"></div>
+            <div class="hs-item">
+                <strong data-target="500">0</strong>
+                <span>Licenciés</span>
+            </div>
+            <div class="hs-divider"></div>
+            <div class="hs-item">
+                <strong data-target="20">0</strong>
+                <span>Clubs affiliés</span>
+            </div>
+            <div class="hs-divider"></div>
+            <div class="hs-item">
+                <strong data-target="30">0</strong>
+                <span>Ans d'histoire</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ticker -->
+    <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+            <div class="ticker-content">
+                <span>Coupe Davis 2026 — Bénin vs El Salvador — 7-8 Février</span>
+                <span class="ticker-dot"></span>
+                <span>Championnat National 2026</span>
+                <span class="ticker-dot"></span>
+                <span>Académie Francophone de Tennis</span>
+                <span class="ticker-dot"></span>
+                <span>Tournoi de l'Espoir — Détection Jeunes</span>
+                <span class="ticker-dot"></span>
+                <span>Phases Départementales</span>
+                <span class="ticker-dot"></span>
+                <span>Tournois Juniors ITF</span>
+                <span class="ticker-dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Davis Cup Banner -->
+    <section class="davis-cup-banner" id="daviscup">
+        <div class="dc-bg">
+            <img src="assets/davis-cup-action-4.jpg" alt="Joueur béninois au filet lors d'un match de Coupe Davis avec les bannières ITF et DavisCup.com" loading="lazy">
+        </div>
+        <div class="dc-overlay"></div>
+        <div class="dc-content">
+            <div class="dc-badge"><span class="dc-live"></span> Prochain match</div>
+            <div class="dc-matchup">
+                <div class="dc-team">
+                    <div class="dc-flag dc-flag-ben"><span></span><span></span><span></span></div>
+                    <span class="dc-team-name">Bénin</span>
+                </div>
+                <div class="dc-vs">VS</div>
+                <div class="dc-team">
+                    <div class="dc-flag dc-flag-slv"><span></span><span></span><span></span></div>
+                    <span class="dc-team-name">El Salvador</span>
+                </div>
+            </div>
+            <h2 class="dc-title">Coupe Davis 2026</h2>
+            <p class="dc-subtitle">Barrages Groupe Mondial II</p>
+            <div class="dc-details">
+                <div class="dc-detail"><i class="fas fa-calendar-alt"></i> 7-8 Février 2026</div>
+                <div class="dc-detail"><i class="fas fa-map-marker-alt"></i> Sofitel Cotonou Marina Hotel &amp; Spa</div>
+                <div class="dc-detail"><i class="fas fa-circle-info"></i> Surface dure</div>
+            </div>
+            <div class="dc-draw">
+                <h3 class="dc-draw-title">Tableau des matchs</h3>
+                <div class="dc-draw-grid">
+                    <div class="dc-match">
+                        <span class="dc-match-label">Simple 1</span>
+                        <span class="dc-match-pair">K. Agbo-Panzo <em>vs</em> D. A. Duran Delgado</span>
+                    </div>
+                    <div class="dc-match">
+                        <span class="dc-match-label">Simple 2</span>
+                        <span class="dc-match-pair">A. Klegou <em>vs</em> J. C. Fuentes Vasquez</span>
+                    </div>
+                    <div class="dc-match">
+                        <span class="dc-match-label">Double</span>
+                        <span class="dc-match-pair">Agbo-Panzo / Klegou <em>vs</em> Duran / Fuentes</span>
+                    </div>
+                    <div class="dc-match">
+                        <span class="dc-match-label">Simple 4</span>
+                        <span class="dc-match-pair">A. Klegou <em>vs</em> D. A. Duran Delgado</span>
+                    </div>
+                    <div class="dc-match">
+                        <span class="dc-match-label">Simple 5</span>
+                        <span class="dc-match-pair">K. Agbo-Panzo <em>vs</em> J. C. Fuentes Vasquez</span>
+                    </div>
+                </div>
+            </div>
+            <p class="dc-caption">Capitaine : Bruno Danhouan &mdash; Le vainqueur accède au Groupe Mondial II en septembre 2026</p>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="apropos">
+        <div class="container">
+            <div class="about-layout">
+                <div class="about-images anim">
+                    <div class="ai-main">
+                        <img src="assets/davis-cup-action-3.jpg" alt="Joueur béninois en position de revers au filet lors d'un match de Coupe Davis" loading="lazy">
+                        <div class="ai-float-badge">
+                            <div class="afb-inner">
+                                <span>Mandat</span>
+                                <strong>2025 — 2029</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ai-secondary">
+                        <img src="assets/beninteam.png" alt="Joueurs de l'équipe nationale du Bénin à l'entraînement sur les courts" loading="lazy">
+                    </div>
+                    <div class="ai-accent"></div>
+                </div>
+                <div class="about-text anim">
+                    <div class="label-tag"><span>À propos</span></div>
+                    <h2 class="section-title">Au cœur du<br>tennis <em>africain</em></h2>
+                    <p class="lead">La Fédération Béninoise de Tennis (FBT), basée au CNOSB à Cotonou, est l'organe directeur du tennis au Bénin.</p>
+                    <p class="body-text">Sous la présidence de <strong>Jean-Claude Talon</strong>, également Président de la Confédération Africaine de Tennis (CAT), la FBT œuvre pour le développement du tennis sur l'ensemble du territoire. Réélu le 12 juillet 2025 avec 21 voix sur 23, il poursuit un programme axé sur la structuration des compétitions, la formation des talents et la modernisation des infrastructures.</p>
+                    <div class="pillars">
+                        <div class="pillar anim">
+                            <div class="pillar-ico"><i class="fas fa-users"></i></div>
+                            <div>
+                                <h4>Formation</h4>
+                                <p>Détection et formation des jeunes talents à travers le pays</p>
+                            </div>
+                        </div>
+                        <div class="pillar anim">
+                            <div class="pillar-ico"><i class="fas fa-globe-africa"></i></div>
+                            <div>
+                                <h4>Rayonnement</h4>
+                                <p>Compétitions internationales et Coupe Davis</p>
+                            </div>
+                        </div>
+                        <div class="pillar anim">
+                            <div class="pillar-ico"><i class="fas fa-building"></i></div>
+                            <div>
+                                <h4>Infrastructures</h4>
+                                <p>Académie Francophone et modernisation des courts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-card anim">
+                <div class="qc-accent"></div>
+                <div class="qc-content">
+                    <svg class="qc-mark" viewBox="0 0 40 30" aria-hidden="true"><path d="M0 30V18L10 0h8L10 18h8v12H0zm22 0V18L32 0h8L32 18h8v12H22z" fill="currentColor"/></svg>
+                    <blockquote>Le tennis béninois est en marche vers l'excellence. Notre ambition est de faire du Bénin une référence du tennis en Afrique.</blockquote>
+                    <div class="qc-author">
+                        <div class="qc-avatar"><img src="assets/jeanclaudetalon.png" alt="Jean-Claude Talon"></div>
+                        <div>
+                            <strong>Jean-Claude Talon</strong>
+                            <span>Président FBT &amp; CAT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Players -->
+    <section class="section" id="joueurs">
+        <div class="container">
+            <div class="section-header center anim">
+                <div class="label-tag"><span>Talents</span></div>
+                <h2 class="section-title">Nos <em>Champions</em></h2>
+                <p class="section-desc">Les joueurs qui portent haut les couleurs du Bénin</p>
+            </div>
+
+            <div class="player-showcase anim">
+                <div class="ps-image">
+                    <img src="assets/davis-cup-action-1.jpg" alt="Patrick Agbo-Panzo en pleine action, coup droit puissant lors d'un match de Coupe Davis" loading="lazy">
+                    <div class="ps-number">01</div>
+                    <div class="ps-flag"><span></span><span></span><span></span></div>
+                </div>
+                <div class="ps-info">
+                    <span class="ps-label">Leader de l'équipe Davis Cup</span>
+                    <h3>Patrick Agbo-Panzo</h3>
+                    <p>Fer de lance de l'équipe béninoise en Coupe Davis. En 2025, il a dominé les barrages contre la Lettonie (6-1 6-1 et 6-3 6-2), permettant au Bénin d'accéder historiquement au Groupe Mondial II. Il représente le Bénin face au Salvador les 7-8 février 2026 à Cotonou.</p>
+                    <div class="ps-tags">
+                        <span><i class="fas fa-trophy"></i> Coupe Davis</span>
+                        <span><i class="fas fa-star"></i> N°1 National</span>
+                        <span><i class="fas fa-fire"></i> Groupe Mondial II</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="player-showcase ps-reverse anim">
+                <div class="ps-image">
+                    <img src="assets/alexiskelgou.png" alt="Alexis Klegou en pleine action, coup droit lors d'un match de Coupe Davis" loading="lazy">
+                    <div class="ps-number">02</div>
+                    <div class="ps-flag"><span></span><span></span><span></span></div>
+                </div>
+                <div class="ps-info">
+                    <span class="ps-label">Vétéran &amp; Ambassadeur</span>
+                    <h3>Alexis Klegou</h3>
+                    <p>Franco-béninois né à Dunkerque en 1989, Alexis a brillé à Texas A&amp;M (Champion Big 12) avant une carrière pro (ATP N°633, 7 titres ITF en double). Avec 29 victoires en Coupe Davis depuis 2011, il est le pilier de l'équipe nationale et un acteur clé de la victoire historique contre la Lettonie en 2025.</p>
+                    <div class="ps-tags">
+                        <span><i class="fas fa-trophy"></i> 29 victoires Davis Cup</span>
+                        <span><i class="fas fa-ranking-star"></i> Ex-ATP N°633</span>
+                        <span><i class="fas fa-graduation-cap"></i> Texas A&amp;M</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bureau -->
+    <section class="section section-alt" id="bureau">
+        <div class="container">
+            <div class="section-header center anim">
+                <div class="label-tag"><span>Gouvernance</span></div>
+                <h2 class="section-title">Bureau Exécutif<br><em>2025 — 2029</em></h2>
+                <p class="section-desc">Élu lors de l'Assemblée Générale du 12 juillet 2025 à Cotonou</p>
+            </div>
+
+            <div class="president-card anim">
+                <div class="pcard-bg"></div>
+                <div class="pcard-content">
+                    <div class="pcard-left">
+                        <span class="pcard-label">Président</span>
+                        <h3 class="pcard-name">Jean-Claude<br>Talon</h3>
+                        <div class="pcard-chips">
+                            <span class="pchip"><i class="fas fa-check-circle"></i> Élu 21/23 voix</span>
+                            <span class="pchip pchip-gold"><i class="fas fa-globe-africa"></i> Président CAT</span>
+                        </div>
+                    </div>
+                    <div class="pcard-right">
+                        <div class="pcard-avatar">
+                            <img src="assets/jeanclaudetalon.png" alt="Jean-Claude Talon, Président de la FBT et de la CAT">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bureau-grid stagger">
+                <div class="bureau-card"><span class="bc-badge">VP</span><h4>Sambo Garba</h4><p>Vice-Président</p></div>
+                <div class="bureau-card"><span class="bc-badge">SG</span><h4>Bernardin Agossou</h4><p>Secrétaire Général</p></div>
+                <div class="bureau-card"><span class="bc-badge">TG</span><h4>Maxime Hodonou</h4><p>Trésorier Général</p></div>
+                <div class="bureau-card"><span class="bc-badge">SGA</span><h4>Bruno Danhouan</h4><p>SG Adjoint</p></div>
+                <div class="bureau-card"><span class="bc-badge">TGA</span><h4>Yedji Gilles</h4><p>Trésorier Adjoint</p></div>
+                <div class="bureau-card"><span class="bc-badge">OC</span><h4>Youssoufou Lawani</h4><p>Organisateur en Chef</p></div>
+                <div class="bureau-card"><span class="bc-badge">AR</span><h4>Jean-Marie da Silva</h4><p>Rep. Arbitres</p></div>
+                <div class="bureau-card bc-accent"><span class="bc-badge">RF</span><h4>Atondé C. Charlène</h4><p>Rep. Féminine</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academy -->
+    <section class="section section-green" id="academie">
+        <div class="section-green-deco" aria-hidden="true">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 120L1440 120L1440 40Q1200 0 720 60Q240 120 0 40Z" fill="var(--green)"/></svg>
+        </div>
+        <div class="container">
+            <div class="aca-layout">
+                <div class="aca-text anim">
+                    <div class="label-tag tag-light"><span>Projet Phare</span></div>
+                    <h2 class="section-title white">Académie<br>Francophone<br><em>de Tennis</em></h2>
+                    <p class="aca-lead">Un projet d'envergure mondiale né lors de Roland-Garros 2017, destiné à combler l'écart entre joueurs africains et le reste du monde.</p>
+                    <p class="aca-body">Discuté entre le Président Patrice Talon et Daniel Chaussé, ce projet vise à faire de Cotonou, aux côtés d'Abidjan et Dakar, un bastion du tennis africain.</p>
+                </div>
+                <div class="aca-cards stagger">
+                    <div class="aca-card">
+                        <div class="ac-number">~20</div>
+                        <h4>Courts labellisés</h4>
+                        <p>Aux standards Roland-Garros</p>
+                    </div>
+                    <div class="aca-card">
+                        <div class="ac-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h4>Avlékété, Ouidah</h4>
+                        <p>Zone côtière du Bénin</p>
+                    </div>
+                    <div class="aca-card">
+                        <div class="ac-icon"><i class="fas fa-earth-africa"></i></div>
+                        <h4>Vocation Francophone</h4>
+                        <p>Centre de formation pour jeunes talents francophones</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Tournoi de l'Espoir - Youth Development -->
+            <div class="espoir-grid anim">
+                <div class="espoir-card">
+                    <img src="assets/tournoi-espoir-regional.jpg" alt="Affiche du Tournoi de l'Espoir Régional 2025 — compétition de détection des jeunes talents dans 6 villes du Bénin" loading="lazy">
+                </div>
+                <div class="espoir-card">
+                    <img src="assets/tournoi-espoir-national.jpg" alt="Affiche du Tournoi de l'Espoir National 2025 — finale au Stade Charles de Gaulle de Porto-Novo" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venues -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header center anim">
+                <div class="label-tag"><span>Infrastructures</span></div>
+                <h2 class="section-title">Nos <em>Sites</em></h2>
+            </div>
+            <div class="venues-grid stagger">
+                <div class="venue-card">
+                    <div class="vc-image">
+                        <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=600&h=400&fit=crop&q=85" alt="Courts de tennis de l'Académie Darboux à Cotonou" loading="lazy">
+                        <span class="vc-location"><i class="fas fa-map-pin"></i> Cotonou</span>
+                    </div>
+                    <div class="vc-body">
+                        <h3>Académie Darboux</h3>
+                        <p>Centre d'entraînement principal et site des compétitions nationales. Pépinière de talents du tennis béninois.</p>
+                    </div>
+                </div>
+                <div class="venue-card">
+                    <div class="vc-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop&q=85" alt="Courts du Stade Charles de Gaulle à Porto-Novo" loading="lazy">
+                        <span class="vc-location"><i class="fas fa-map-pin"></i> Porto-Novo</span>
+                    </div>
+                    <div class="vc-body">
+                        <h3>Stade Charles de Gaulle</h3>
+                        <p>Complexe sportif de la capitale administrative, accueillant les phases départementales et nationales.</p>
+                    </div>
+                </div>
+                <div class="venue-card">
+                    <div class="vc-image">
+                        <img src="assets/trainingatsofitel.png" alt="Entraînement de l'équipe du Bénin sur les courts du Sofitel Cotonou Marina Hotel" loading="lazy">
+                        <span class="vc-location"><i class="fas fa-map-pin"></i> Cotonou</span>
+                    </div>
+                    <div class="vc-body">
+                        <h3>Sofitel Cotonou Marina</h3>
+                        <p>Site officiel de la Coupe Davis 2025 et 2026. Courts en dur aux standards internationaux, au cœur de l'hôtel Sofitel Marina.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitions -->
+    <section class="section section-alt" id="competitions">
+        <div class="container">
+            <div class="section-header anim">
+                <div class="label-tag"><span>Événements</span></div>
+                <h2 class="section-title">Nos <em>Compétitions</em></h2>
+            </div>
+            <div class="comp-grid stagger">
+                <div class="comp-card cc-featured">
+                    <div class="cc-top">
+                        <div><span class="cc-day">7-8</span><span class="cc-month">Février 2026</span></div>
+                        <div class="cc-icon"><i class="fas fa-globe"></i></div>
+                    </div>
+                    <h3>Coupe Davis — Bénin vs El Salvador</h3>
+                    <p>Barrages du Groupe Mondial II. Le Bénin accueille le Salvador au Sofitel Cotonou Marina. Le vainqueur rejoint le Groupe Mondial II en septembre.</p>
+                    <div class="cc-chips"><span>Groupe Mondial II</span><span>Sofitel Cotonou</span><span>Surface dure</span></div>
+                </div>
+                <div class="comp-card">
+                    <div class="cc-top">
+                        <div><span class="cc-month">2026</span></div>
+                        <div class="cc-icon"><i class="fas fa-trophy"></i></div>
+                    </div>
+                    <h3>Championnat National</h3>
+                    <p>La semaine sportive la plus attendue. Toutes les catégories, des 10 ans aux seniors, s'affrontent pour le titre national.</p>
+                    <div class="cc-chips"><span>Toutes catégories</span><span>Darboux &amp; Ch. de Gaulle</span></div>
+                </div>
+                <div class="comp-card">
+                    <div class="cc-top">
+                        <div><span class="cc-month">Décembre 2025</span></div>
+                        <div class="cc-icon"><i class="fas fa-seedling"></i></div>
+                    </div>
+                    <h3>Tournoi de l'Espoir</h3>
+                    <p>Phases régionales (6 villes) puis finale nationale au Stade Ch. de Gaulle de Porto-Novo. Catégories 12 ans et 16 ans. Inscription gratuite.</p>
+                    <div class="cc-chips"><span>12 &amp; 16 ans</span><span>Détection</span><span>6 villes</span></div>
+                </div>
+                <div class="comp-card">
+                    <div class="cc-top">
+                        <div><span class="cc-month">Annuel</span></div>
+                        <div class="cc-icon"><i class="fas fa-sitemap"></i></div>
+                    </div>
+                    <h3>Phases Départementales</h3>
+                    <p>Compétitions dans les 12 départements pour détecter les futurs talents du championnat national.</p>
+                    <div class="cc-chips"><span>12 départements</span><span>Détection</span></div>
+                </div>
+                <div class="comp-card">
+                    <div class="cc-top">
+                        <div><span class="cc-month">Annuel</span></div>
+                        <div class="cc-icon"><i class="fas fa-star"></i></div>
+                    </div>
+                    <h3>Tournois Juniors ITF</h3>
+                    <p>Participation aux circuits internationaux juniors de l'ITF en Afrique de l'Ouest.</p>
+                    <div class="cc-chips"><span>Juniors</span><span>ITF</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card anim">
+                <div class="cta-deco-ball" aria-hidden="true">
+                    <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="90" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="2"/><path d="M30 100 Q100 20 170 100 Q100 180 30 100Z" fill="none" stroke="rgba(255,255,255,.04)" stroke-width="1.5"/></svg>
+                </div>
+                <h2>Rejoignez le mouvement du tennis <em>béninois</em></h2>
+                <p>Joueur, entraîneur, arbitre ou passionné — la FBT vous accueille.</p>
+                <a href="#contact" class="btn btn-white-solid">Nous contacter <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-info anim">
+                    <div class="label-tag"><span>Contact</span></div>
+                    <h2 class="section-title">Restons en<br><em>contact</em></h2>
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="ii-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div><strong>Siège</strong><p>CNOSB, Cotonou, Bénin</p></div>
+                        </div>
+                        <div class="info-item">
+                            <div class="ii-icon"><i class="fas fa-envelope"></i></div>
+                            <div><strong>Email</strong><p>contact@fedebenintennis.com</p></div>
+                        </div>
+                        <div class="info-item">
+                            <div class="ii-icon"><i class="fas fa-globe"></i></div>
+                            <div><strong>Web</strong><p>www.fedebenintennis.com</p></div>
+                        </div>
+                        <div class="info-item">
+                            <div class="ii-icon"><i class="fas fa-landmark"></i></div>
+                            <div><strong>Affiliations</strong><p>ITF &bull; CAT &bull; CNOSB</p></div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form anim" id="contactForm">
+                    <h3 class="cf-title">Envoyez-nous un message</h3>
+                    <p class="cf-demo"><i class="fas fa-info-circle"></i> Formulaire de démonstration — aucun message n'est envoyé.</p>
+                    <div class="form-row">
+                        <div class="field"><label for="cf-name">Nom complet</label><input id="cf-name" type="text" placeholder="Votre nom" required></div>
+                        <div class="field"><label for="cf-email">Email</label><input id="cf-email" type="email" placeholder="votre@email.com" required></div>
+                    </div>
+                    <div class="field">
+                        <label for="cf-subject">Objet</label>
+                        <select id="cf-subject" required>
+                            <option value="" disabled selected>Sélectionnez un sujet</option>
+                            <option>Inscription à un club</option>
+                            <option>Compétitions</option>
+                            <option>Partenariat / Sponsoring</option>
+                            <option>Formation / Stage</option>
+                            <option>Autre</option>
+                        </select>
+                    </div>
+                    <div class="field"><label for="cf-msg">Message</label><textarea id="cf-msg" rows="4" placeholder="Votre message..." required></textarea></div>
+                    <button type="submit" class="btn btn-submit">
+                        <span>Envoyer le message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="fg-brand">
+                    <div class="fg-logo">
+                        <img src="assets/logo-fbt.jpeg" alt="Logo FBT" class="fg-logo-img">
+                    </div>
+                    <p>Fédération Béninoise de Tennis — Développer et faire rayonner le tennis béninois.</p>
+                    <div class="fg-social">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="fg-col">
+                    <h4>Navigation</h4>
+                    <a href="#accueil">Accueil</a>
+                    <a href="#apropos">À propos</a>
+                    <a href="#bureau">Bureau</a>
+                    <a href="#joueurs">Champions</a>
+                </div>
+                <div class="fg-col">
+                    <h4>Ressources</h4>
+                    <a href="#academie">Académie</a>
+                    <a href="#competitions">Compétitions</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="fg-col">
+                    <h4>Partenaires</h4>
+                    <a href="https://www.itftennis.com" target="_blank" rel="noopener">ITF Tennis</a>
+                    <a href="http://www.cattennis.com" target="_blank" rel="noopener">CAT</a>
+                    <a href="https://www.fft.fr" target="_blank" rel="noopener">FFT</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="fb-flag" aria-label="Drapeau du Bénin"><span></span><span></span><span></span></div>
+                <p>&copy; 2026 Fédération Béninoise de Tennis. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
