@@ -78,7 +78,7 @@ button{font-family:var(--font);cursor:pointer;border:none;background:none}
    ============================================ */
 .tennis-ball-container{position:fixed;z-index:5;pointer-events:none;left:0;top:0;opacity:0;transition:opacity .6s;will-change:transform}
 .tennis-ball-container.active{opacity:.55}
-.tb-svg{width:48px;height:48px;filter:drop-shadow(0 8px 20px rgba(200,170,40,.35));transition:filter .3s}
+.tb-svg{width:48px;height:48px;filter:drop-shadow(0 10px 28px rgba(80,140,20,.5));transition:filter .3s}
 .tb-shadow{width:30px;height:6px;background:radial-gradient(ellipse,rgba(0,0,0,.12),transparent);border-radius:50%;margin:4px auto 0;transition:all .3s}
 
 @media(max-width:768px){
@@ -131,8 +131,7 @@ button{font-family:var(--font);cursor:pointer;border:none;background:none}
 .navbar.scrolled{padding:10px 0;background:rgba(255,255,255,.95);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 1px 0 var(--gray-200)}
 .nav-container{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between}
 .nav-logo{display:flex;align-items:center;gap:12px;transition:all .4s}
-.logo-img{height:40px;width:auto;filter:brightness(0) invert(1);transition:filter .4s}
-.navbar.scrolled .logo-img{filter:none}
+.logo-img{height:38px;width:auto;border-radius:6px}
 .nav-links{display:flex;align-items:center;gap:6px}
 .nav-link{font-size:.78rem;font-weight:500;color:rgba(255,255,255,.65);padding:8px 14px;border-radius:100px;transition:all .3s}
 .nav-link:hover{color:var(--white);background:rgba(255,255,255,.08)}
@@ -429,7 +428,7 @@ button{font-family:var(--font);cursor:pointer;border:none;background:none}
 .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.06)}
 .fg-brand p{font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.75;margin:14px 0 20px}
 .fg-logo{display:flex;align-items:center;gap:10px;color:var(--white)}
-.fg-logo-img{height:40px;width:auto;filter:brightness(0) invert(1);opacity:.8}
+.fg-logo-img{height:36px;width:auto;border-radius:4px}
 .fg-logo strong{font-size:1rem;font-weight:900;letter-spacing:2px}
 .fg-social{display:flex;gap:10px}
 .fg-social a{width:36px;height:36px;border:1px solid rgba(255,255,255,.08);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.8rem;transition:all .35s var(--ease)}
